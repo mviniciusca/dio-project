@@ -11,4 +11,4 @@ repositório de jornada na dio.me
 <hr/>
 
 ### 📙 Cursos
--Angular 8
+- Angular 8
