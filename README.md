@@ -1,2 +1,1 @@
-# dio-project
-repositório do curso da dio sobre git/github
+# Dio Project Repo
