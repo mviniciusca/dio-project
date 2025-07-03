@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudanças Climáticas - WikiModerna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .breadcrumb {
+            background: #34495e;
+            padding: 1rem 2rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .article-meta {
+            background: #ecf0f1;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid #27ae60;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .meta-item {
+            display: inline-block;
+            margin-right: 2rem;
+            color: #555;
+        }
+
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: #27ae60;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #229954;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #27ae6010, #22995410);
+            border-left: 4px solid #27ae60;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #e74c3c10, #c0392b10);
+            border-left: 4px solid #e74c3c;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+            border: 1px solid #e74c3c20;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .back-to-home {
+            background: #27ae60;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem 0;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: #229954;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .solution-card {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-title {
+            color: #27ae60;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .article-meta {
+                margin: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>WikiModerna</h1>
+            </div>
+        </header>
+
+        <div class="breadcrumb">
+            <a href="wiki.html">Início</a> &gt; <a href="#ciencia">Ciência & Ambiente</a> &gt; Mudanças Climáticas
+        </div>
+
+        <div class="article-header">
+            <h1 class="article-title">Mudanças Climáticas</h1>
+            <p class="article-subtitle">O Desafio Ambiental do Século XXI</p>
+        </div>
+
+        <div class="article-meta">
+            <span class="meta-item"><strong>Categoria:</strong> Ciência & Ambiente</span>
+            <span class="meta-item"><strong>Última atualização:</strong> 3 de julho de 2025</span>
+            <span class="meta-item"><strong>Tempo de leitura:</strong> 15 minutos</span>
+        </div>
+
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Índice</h3>
+                <ul>
+                    <li><a href="#introducao">1. Introdução</a></li>
+                    <li><a href="#causas">2. Principais Causas</a></li>
+                    <li><a href="#evidencias">3. Evidências Científicas</a></li>
+                    <li><a href="#impactos">4. Impactos Globais</a></li>
+                    <li><a href="#dados">5. Dados e Estatísticas</a></li>
+                    <li><a href="#solucoes">6. Soluções e Mitigação</a></li>
+                    <li><a href="#acoes">7. Ações Individuais</a></li>
+                    <li><a href="#futuro">8. Cenários Futuros</a></li>
+                </ul>
+            </div>
+
+            <section id="introducao" class="section">
+                <h2>🌍 Introdução</h2>
+                <p>
+                    As <strong>mudanças climáticas</strong> referem-se às alterações de longo prazo nos padrões de temperatura, precipitação e outros aspectos do clima da Terra. Embora variações climáticas sejam naturais, evidências científicas esmagadoras mostram que as atividades humanas são o principal motor das mudanças climáticas atuais, principalmente através da emissão de gases de efeito estufa.
+                </p>
+                <p>
+                    Desde a Revolução Industrial, a concentração de gases de efeito estufa na atmosfera aumentou significativamente, resultando em um aquecimento global sem precedentes. Este fenômeno não apenas afeta as temperaturas globais, mas também altera padrões climáticos, ecossistemas e sociedades humanas em todo o planeta.
+                </p>
+                
+                <div class="image-placeholder">
+                    🌡️ Imagem: Gráfico da elevação da temperatura global desde 1880
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ Alerta Científico:</strong> O Painel Intergovernamental sobre Mudanças Climáticas (IPCC) confirma que a influência humana aqueceu o planeta em aproximadamente 1.1°C desde 1850-1900, e as mudanças observadas são sem precedentes em milhares de anos.
+                </div>
+            </section>
+
+            <section id="causas" class="section">
+                <h2>🏭 Principais Causas</h2>
+                
+                <h3>Efeito Estufa Natural vs. Intensificado</h3>
+                <p>
+                    O efeito estufa é um processo natural essencial para a vida na Terra. Gases como vapor d'água, dióxido de carbono (CO₂) e metano (CH₄) retêm parte do calor solar, mantendo o planeta aquecido. No entanto, as atividades humanas intensificaram drasticamente este processo.
+                </p>
+
+                <h3>Emissões de Gases de Efeito Estufa</h3>
+                <p>
+                    <strong>Dióxido de Carbono (CO₂):</strong> Responsável por cerca de 76% das emissões globais, principalmente proveniente da queima de combustíveis fósseis (carvão, petróleo, gás natural) e desmatamento.
+                </p>
+                <p>
+                    <strong>Metano (CH₄):</strong> Representa 16% das emissões, originado principalmente da agricultura (especialmente pecuária), aterros sanitários e extração de combustíveis fósseis.
+                </p>
+                <p>
+                    <strong>Óxido Nitroso (N₂O):</strong> Cerca de 6% das emissões, principalmente de fertilizantes agrícolas e processos industriais.
+                </p>
+
+                <div class="image-placeholder">
+                    🏭 Imagem: Principais fontes de emissão de gases de efeito estufa por setor
+                </div>
+
+                <h3>Desmatamento e Mudança do Uso da Terra</h3>
+                <p>
+                    O desmatamento, especialmente na Amazônia, reduz a capacidade da Terra de absorver CO₂ e libera carbono armazenado nas árvores. A conversão de florestas em agricultura ou áreas urbanas elimina sumidouros naturais de carbono.
+                </p>
+            </section>
+
+            <section id="evidencias" class="section">
+                <h2>🔬 Evidências Científicas</h2>
+
+                <h3>Registros de Temperatura</h3>
+                <p>
+                    Os dados instrumentais mostram que a temperatura média global aumentou cerca de 1.1°C desde o final do século XIX. Os últimos quatro décadas foram sucessivamente as mais quentes já registradas desde 1850.
+                </p>
+
+                <h3>Testemunhos Glaciais</h3>
+                <p>
+                    Análises de núcleos de gelo da Antártica e Groenlândia fornecem registros climáticos de centenas de milhares de anos, mostrando que os níveis atuais de CO₂ (mais de 420 ppm) são os mais altos em pelo menos 3 milhões de anos.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>📊 Concentração de CO₂:</strong>
+                    <br>• Era pré-industrial (1850): ~280 ppm
+                    <br>• Atualmente (2025): >420 ppm
+                    <br>• Taxa de crescimento: ~2.5 ppm/ano
+                </div>
+
+                <h3>Indicadores Naturais</h3>
+                <p>
+                    <strong>Derretimento de Geleiras:</strong> Geleiras em todo o mundo estão recuando rapidamente. O Ártico está perdendo gelo marinho a uma taxa de 13% por década.
+                </p>
+                <p>
+                    <strong>Elevação do Nível do Mar:</strong> O nível global do mar subiu aproximadamente 20 cm desde 1900, com aceleração nas últimas décadas.
+                </p>
+                <p>
+                    <strong>Mudanças na Biodiversidade:</strong> Espécies estão migrando para latitudes e altitudes mais altas, e eventos de floração/reprodução estão ocorrendo mais cedo.
+                </p>
+            </section>
+
+            <section id="impactos" class="section">
+                <h2>⚡ Impactos Globais</h2>
+
+                <h3>Eventos Climáticos Extremos</h3>
+                <p>
+                    As mudanças climáticas intensificam eventos extremos como ondas de calor, secas prolongadas, enchentes, furacões mais intensos e incêndios florestais. Estes eventos causam perdas humanas, econômicas e ambientais significativas.
+                </p>
+
+                <div class="image-placeholder">
+                    🔥 Imagem: Mapa global mostrando eventos climáticos extremos recentes
+                </div>
+
+                <h3>Impactos na Agricultura</h3>
+                <p>
+                    Mudanças nos padrões de chuva e temperaturas afetam a produtividade agrícola. Algumas regiões podem se beneficiar inicialmente, mas os impactos negativos predominam globalmente, ameaçando a segurança alimentar.
+                </p>
+
+                <h3>Recursos Hídricos</h3>
+                <p>
+                    Alterações no ciclo hidrológico resultam em escassez de água em algumas regiões e excesso em outras. Geleiras que fornecem água doce para bilhões de pessoas estão diminuindo rapidamente.
+                </p>
+
+                <h3>Saúde Humana</h3>
+                <p>
+                    As mudanças climáticas afetam a saúde através do aumento de doenças transmitidas por vetores, ondas de calor, poluição do ar, desnutrição e deslocamentos populacionais forçados.
+                </p>
+
+                <div class="warning-box">
+                    <strong>🚨 Impactos Socioeconômicos:</strong> O Banco Mundial estima que sem ação climática adequada, as mudanças climáticas poderiam empurrar 216 milhões de pessoas à migração interna até 2050 e reduzir o PIB global em até 23% até 2100.
+                </div>
+            </section>
+
+            <section id="dados" class="section">
+                <h2>📈 Dados e Estatísticas</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1.1°C</div>
+                        <div class="stat-label">Aquecimento Global desde 1880</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">420+</div>
+                        <div class="stat-label">ppm de CO₂ na Atmosfera</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">20cm</div>
+                        <div class="stat-label">Elevação do Nível do Mar</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">13%</div>
+                        <div class="stat-label">Perda de Gelo Ártico/Década</div>
+                    </div>
+                </div>
+
+                <h3>Emissões por País e Setor</h3>
+                <p>
+                    <strong>Maiores Emissores (2023):</strong> China (30%), Estados Unidos (14%), Índia (7%), Rússia (5%), Japão (3%). O Brasil ocupa a 7ª posição, principalmente devido ao desmatamento.
+                </p>
+                <p>
+                    <strong>Emissões por Setor:</strong> Energia (73%), Agricultura (18%), Processos Industriais (5%), Resíduos (3%).
+                </p>
+
+                <div class="image-placeholder">
+                    📊 Imagem: Gráficos de emissões globais por país e setor
+                </div>
+            </section>
+
+            <section id="solucoes" class="section">
+                <h2>🔋 Soluções e Mitigação</h2>
+
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">⚡</div>
+                        <div class="solution-title">Energias Renováveis</div>
+                        <p>Transição para solar, eólica, hidrelétrica e outras fontes limpas.</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">🚗</div>
+                        <div class="solution-title">Transporte Sustentável</div>
+                        <p>Veículos elétricos, transporte público e combustíveis alternativos.</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">🏠</div>
+                        <div class="solution-title">Eficiência Energética</div>
+                        <p>Construções sustentáveis e tecnologias eficientes.</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">🌳</div>
+                        <div class="solution-title">Reflorestamento</div>
+                        <p>Restauração de florestas e proteção de ecossistemas.</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">🏭</div>
+                        <div class="solution-title">Indústria Verde</div>
+                        <p>Processos industriais limpos e economia circular.</p>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-icon">🌾</div>
+                        <div class="solution-title">Agricultura Sustentável</div>
+                        <p>Práticas agrícolas que reduzem emissões e sequestram carbono.</p>
+                    </div>
+                </div>
+
+                <h3>Acordos Internacionais</h3>
+                <p>
+                    <strong>Acordo de Paris (2015):</strong> Objetivo de limitar o aquecimento global a bem abaixo de 2°C, preferencialmente 1.5°C, em relação aos níveis pré-industriais.
+                </p>
+                <p>
+                    <strong>COP28 (2023):</strong> Acordo histórico para transição dos combustíveis fósseis, com meta de triplicar a capacidade de energia renovável até 2030.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>🎯 Meta Net Zero:</strong> Mais de 70 países se comprometeram a atingir emissões líquidas zero até 2050, incluindo União Europeia, Reino Unido, Japão e Coreia do Sul. O Brasil se comprometeu com 2050, antecipando a meta anterior de 2060.
+                </div>
+            </section>
+
+            <section id="acoes" class="section">
+                <h2>🤝 Ações Individuais</h2>
+
+                <h3>Energia e Transporte</h3>
+                <p>
+                    • Usar transporte público, bicicleta ou caminhar sempre que possível
+                    <br>• Considerar veículos elétricos ou híbridos
+                    <br>• Reduzir viagens aéreas ou compensar emissões
+                    <br>• Usar energia renovável em casa
+                    <br>• Melhorar a eficiência energética (LED, isolamento térmico)
+                </p>
+
+                <h3>Consumo e Estilo de Vida</h3>
+                <p>
+                    • Reduzir o consumo de carne (especialmente bovina)
+                    <br>• Minimizar o desperdício de alimentos
+                    <br>• Comprar produtos locais e sazonais
+                    <br>• Reduzir, reutilizar e reciclar
+                    <br>• Escolher produtos com menor pegada de carbono
+                </p>
+
+                <h3>Engajamento Social</h3>
+                <p>
+                    • Votar em candidatos com plataformas ambientais sólidas
+                    <br>• Apoiar empresas sustentáveis
+                    <br>• Educar outros sobre mudanças climáticas
+                    <br>• Participar de organizações ambientais
+                    <br>• Investir em fundos sustentáveis
+                </p>
+            </section>
+
+            <section id="futuro" class="section">
+                <h2>🔮 Cenários Futuros</h2>
+
+                <h3>Cenário Otimista (1.5°C)</h3>
+                <p>
+                    Com ações climáticas ambiciosas, limitando o aquecimento a 1.5°C, ainda haverá impactos significativos, mas gerenciáveis. Requer transformações rápidas e de larga escala em energia, transporte, construção e agricultura.
+                </p>
+
+                <h3>Cenário Moderado (2-3°C)</h3>
+                <p>
+                    Aquecimento de 2-3°C resultará em impactos climáticos severos: eventos extremos mais frequentes, escassez de água, perda de biodiversidade significativa e deslocamentos populacionais em massa.
+                </p>
+
+                <h3>Cenário Pessimista (>3°C)</h3>
+                <p>
+                    Sem ação climática adequada, aquecimento acima de 3°C causaria mudanças irreversíveis: colapso de ecossistemas, elevação catastrófica do nível do mar e riscos existenciais para a civilização humana.
+                </p>
+
+                <div class="warning-box">
+                    <strong>⏰ Janela de Oportunidade:</strong> Os próximos 10 anos são cruciais. Para limitar o aquecimento a 1.5°C, as emissões globais devem ser reduzidas em 45% até 2030 e atingir zero líquido até 2050.
+                </div>
+
+                <h3>Tecnologias Emergentes</h3>
+                <p>
+                    <strong>Captura de Carbono:</strong> Tecnologias para remover CO₂ diretamente da atmosfera estão sendo desenvolvidas, mas ainda são caras e de escala limitada.
+                </p>
+                <p>
+                    <strong>Hidrogênio Verde:</strong> Produzido com energia renovável, pode descarbonizar setores difíceis como siderurgia e transporte pesado.
+                </p>
+                <p>
+                    <strong>Fusão Nuclear:</strong> Promete energia limpa abundante, mas ainda está em desenvolvimento e décadas de aplicação comercial.
+                </p>
+            </section>
+
+            <a href="wiki.html" class="back-to-home">← Voltar à Página Inicial</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 WikiModerna. Conhecimento livre para todos 📚</p>
+        </footer>
+    </div>
+</body>
+</html>

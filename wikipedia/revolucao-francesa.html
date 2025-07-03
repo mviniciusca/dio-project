@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolução Francesa - WikiModerna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .breadcrumb {
+            background: #34495e;
+            padding: 1rem 2rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .article-meta {
+            background: #ecf0f1;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid #e74c3c;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .meta-item {
+            display: inline-block;
+            margin-right: 2rem;
+            color: #555;
+        }
+
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: #e74c3c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #c0392b;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e74c3c10, #c0392b10);
+            border-left: 4px solid #e74c3c;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .timeline {
+            border-left: 3px solid #e74c3c;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #e74c3c;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content {
+            margin-top: 0.5rem;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .back-to-home {
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem 0;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: #c0392b;
+        }
+
+        .quote-box {
+            background: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+
+        .quote-author {
+            text-align: right;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .article-meta {
+                margin: 1rem;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>WikiModerna</h1>
+            </div>
+        </header>
+
+        <div class="breadcrumb">
+            <a href="wiki.html">Início</a> &gt; <a href="#historia">História</a> &gt; Revolução Francesa
+        </div>
+
+        <div class="article-header">
+            <h1 class="article-title">Revolução Francesa</h1>
+            <p class="article-subtitle">Liberdade, Igualdade e Fraternidade (1789-1799)</p>
+        </div>
+
+        <div class="article-meta">
+            <span class="meta-item"><strong>Categoria:</strong> História</span>
+            <span class="meta-item"><strong>Período:</strong> 1789-1799</span>
+            <span class="meta-item"><strong>Tempo de leitura:</strong> 12 minutos</span>
+        </div>
+
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Índice</h3>
+                <ul>
+                    <li><a href="#introducao">1. Introdução</a></li>
+                    <li><a href="#antecedentes">2. Antecedentes e Causas</a></li>
+                    <li><a href="#inicio">3. O Início da Revolução</a></li>
+                    <li><a href="#fases">4. As Fases da Revolução</a></li>
+                    <li><a href="#personagens">5. Principais Personagens</a></li>
+                    <li><a href="#consequencias">6. Consequências</a></li>
+                    <li><a href="#legado">7. Legado Mundial</a></li>
+                </ul>
+            </div>
+
+            <section id="introducao" class="section">
+                <h2>⚔️ Introdução</h2>
+                <p>
+                    A <strong>Revolução Francesa</strong> (1789-1799) foi um período de mudanças políticas e sociais radicais na França que teve profundo impacto na história mundial. Este movimento revolucionário marcou o fim do <em>Antigo Regime</em> e estabeleceu os princípios de liberdade, igualdade e fraternidade que influenciaram movimentos democráticos em todo o mundo.
+                </p>
+                <p>
+                    A revolução transformou completamente a estrutura social, política e econômica da França, abolindo o feudalismo, declarando os direitos do homem e do cidadão, e estabelecendo precedentes para futuras revoluções democráticas globais.
+                </p>
+                
+                <div class="image-placeholder">
+                    🏰 Imagem: A Queda da Bastilha - 14 de julho de 1789
+                </div>
+
+                <div class="quote-box">
+                    "O homem nasce livre, e por toda parte encontra-se acorrentado."
+                    <div class="quote-author">- Jean-Jacques Rousseau</div>
+                </div>
+            </section>
+
+            <section id="antecedentes" class="section">
+                <h2>📚 Antecedentes e Causas</h2>
+                
+                <h3>Crise Financeira</h3>
+                <p>
+                    A França enfrentava uma grave crise financeira no final do século XVIII. O país estava endividado devido às guerras custosas, incluindo a participação na Guerra dos Sete Anos e o apoio à Revolução Americana. Os gastos da corte em Versalhes eram exorbitantes, enquanto o sistema tributário era extremamente injusto.
+                </p>
+
+                <h3>Desigualdade Social</h3>
+                <p>
+                    A sociedade francesa era dividida em três estados: o Primeiro Estado (clero), o Segundo Estado (nobreza) e o Terceiro Estado (burguesia, artesãos e camponeses). Os dois primeiros estados, que representavam apenas 3% da população, eram isentos de impostos, enquanto o Terceiro Estado, 97% da população, carregava todo o fardo tributário.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>💡 Estrutura Social do Antigo Regime:</strong>
+                    <br>• <strong>Primeiro Estado:</strong> Clero (1% da população) - Isentos de impostos
+                    <br>• <strong>Segundo Estado:</strong> Nobreza (2% da população) - Isentos de impostos
+                    <br>• <strong>Terceiro Estado:</strong> Todos os demais (97% da população) - Pagavam todos os impostos
+                </div>
+
+                <h3>Influência do Iluminismo</h3>
+                <p>
+                    As ideias iluministas de filósofos como Voltaire, Montesquieu e Rousseau questionavam o absolutismo monárquico e defendiam conceitos como separação de poderes, soberania popular e direitos naturais. Essas ideias fermentaram o descontentamento popular e forneceram base teórica para a revolução.
+                </p>
+            </section>
+
+            <section id="inicio" class="section">
+                <h2>🔥 O Início da Revolução</h2>
+
+                <h3>Convocação dos Estados Gerais</h3>
+                <p>
+                    Em 1789, o rei Luís XVI, pressionado pela crise financeira, convocou os Estados Gerais pela primeira vez desde 1614. Este órgão representativo dos três estados da sociedade francesa se reuniu em Versalhes em 5 de maio de 1789.
+                </p>
+
+                <h3>Juramento da Péla</h3>
+                <p>
+                    Em 20 de junho de 1789, os deputados do Terceiro Estado, encontrando a sala de reuniões fechada, se reuniram numa quadra de tênis (jeu de paume) e fizeram o famoso "Juramento da Péla", comprometendo-se a elaborar uma nova constituição para a França.
+                </p>
+
+                <div class="image-placeholder">
+                    ✊ Imagem: O Juramento da Péla - Jacques-Louis David
+                </div>
+
+                <h3>A Queda da Bastilha</h3>
+                <p>
+                    Em 14 de julho de 1789, a população parisiense, enfurecida pela demissão do ministro Jacques Necker, atacou e tomou a fortaleza da Bastilha, símbolo do poder real e da opressão. Este evento marcou simbolicamente o início da Revolução Francesa e é celebrado até hoje como o Dia Nacional da França.
+                </p>
+            </section>
+
+            <section id="fases" class="section">
+                <h2>📅 As Fases da Revolução</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1789-1792: Monarquia Constitucional</div>
+                        <div class="timeline-content">
+                            <p>Período inicial marcado pela Declaração dos Direitos do Homem e do Cidadão (1789), abolição do feudalismo e tentativa de estabelecer uma monarquia constitucional. O rei mantinha o poder executivo, mas limitado por uma constituição.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">1792-1794: República Jacobina</div>
+                        <div class="timeline-content">
+                            <p>Proclamação da República (1792), execução de Luís XVI (1793) e início do "Terror" sob liderança de Robespierre. Período de radicalização política e perseguição aos "inimigos da revolução".</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">1794-1799: Reação Termidoriana</div>
+                        <div class="timeline-content">
+                            <p>Queda de Robespierre (1794) e moderação política. Estabelecimento do Diretório (1795-1799), período de instabilidade que culminou com o golpe de Napoleão Bonaparte.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>O Terror (1793-1794)</h3>
+                <p>
+                    O período conhecido como "Terror" foi caracterizado pela perseguição sistemática aos opositores da revolução. A guilhotina tornou-se símbolo deste período, sendo utilizada para executar milhares de pessoas, incluindo a rainha Maria Antonieta e, eventualmente, o próprio Robespierre.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>⚖️ Números do Terror:</strong> Estima-se que entre 16.000 e 17.000 pessoas foram executadas durante o período do Terror, incluindo membros da nobreza, clero e até mesmo revolucionários moderados.
+                </div>
+            </section>
+
+            <section id="personagens" class="section">
+                <h2>👥 Principais Personagens</h2>
+
+                <h3>Maximilien Robespierre (1758-1794)</h3>
+                <p>
+                    Conhecido como "O Incorruptível", Robespierre foi uma das figuras mais influentes da revolução. Líder dos jacobinos, defendia uma república democrática e virtuosa. Sua radicalização levou ao período do Terror, mas também foi vítima da própria máquina que criou, sendo executado em 1794.
+                </p>
+
+                <h3>Georges Danton (1759-1794)</h3>
+                <p>
+                    Orador eloquente e político pragmático, Danton foi fundamental na proclamação da República. Inicialmente aliado de Robespierre, posteriormente tentou moderar a revolução, o que levou ao seu conflito com os jacobinos radicais e sua eventual execução.
+                </p>
+
+                <h3>Olympe de Gouges (1748-1793)</h3>
+                <p>
+                    Escritora e ativista política, autora da "Declaração dos Direitos da Mulher e da Cidadã" (1791), questionando por que as mulheres não tinham os mesmos direitos proclamados pela revolução. Sua obra pioneira no feminismo custou-lhe a vida durante o Terror.
+                </p>
+
+                <div class="image-placeholder">
+                    👤 Imagem: Retratos dos principais líderes revolucionários
+                </div>
+
+                <h3>Jacques Necker (1732-1804)</h3>
+                <p>
+                    Ministro das Finanças de Luís XVI, Necker foi popular por tentar reformas financeiras e por publicar o primeiro orçamento público da França. Sua demissão em julho de 1789 foi um dos estopins para a tomada da Bastilha.
+                </p>
+            </section>
+
+            <section id="consequencias" class="section">
+                <h2>🌊 Consequências Imediatas</h2>
+
+                <h3>Transformações Sociais</h3>
+                <p>
+                    A revolução aboliu o sistema feudal, eliminando os privilégios da nobreza e do clero. O princípio da igualdade perante a lei foi estabelecido, e a meritocracia começou a substituir os privilégios hereditários.
+                </p>
+
+                <h3>Mudanças Políticas</h3>
+                <p>
+                    O absolutismo monárquico foi derrubado, estabelecendo-se conceitos como soberania popular, separação de poderes e direitos individuais. A Declaração dos Direitos do Homem e do Cidadão tornou-se modelo para futuras constituições democráticas.
+                </p>
+
+                <h3>Reformas Econômicas</h3>
+                <p>
+                    A abolição das corporações de ofício estabeleceu a liberdade de trabalho. Os bens da Igreja foram nacionalizados, e um novo sistema monetário foi criado. O sistema métrico decimal também foi introduzido durante este período.
+                </p>
+
+                <div class="quote-box">
+                    "Os homens nascem e permanecem livres e iguais em direitos."
+                    <div class="quote-author">- Declaração dos Direitos do Homem e do Cidadão, Artigo 1º</div>
+                </div>
+            </section>
+
+            <section id="legado" class="section">
+                <h2>🌍 Legado Mundial</h2>
+
+                <h3>Inspiração para Outras Revoluções</h3>
+                <p>
+                    A Revolução Francesa inspirou movimentos de independência nas Américas, como as revoluções na América Latina lideradas por figuras como Simón Bolívar. Os ideais revolucionários também influenciaram as revoluções de 1848 na Europa.
+                </p>
+
+                <h3>Desenvolvimento do Nacionalismo</h3>
+                <p>
+                    A revolução fortaleceu o conceito de nação-estado e nacionalismo. A ideia de que o poder emana do povo, não do divino direito dos reis, tornou-se fundamental para o desenvolvimento das democracias modernas.
+                </p>
+
+                <h3>Direitos Humanos</h3>
+                <p>
+                    A Declaração dos Direitos do Homem e do Cidadão estabeleceu precedentes importantes para o desenvolvimento posterior dos direitos humanos universais, influenciando documentos como a Declaração Universal dos Direitos Humanos da ONU (1948).
+                </p>
+
+                <div class="highlight-box">
+                    <strong>🏛️ Influência Duradoura:</strong> Os princípios de liberdade, igualdade e fraternidade proclamados pela Revolução Francesa continuam sendo fundamentais para as democracias modernas e movimentos de direitos civis em todo o mundo.
+                </div>
+
+                <h3>Secularização</h3>
+                <p>
+                    A revolução promoveu a separação entre Igreja e Estado, estabelecendo princípios de laicidade que influenciaram constituições modernas. O casamento civil e o registro civil de nascimentos e óbitos foram introduzidos.
+                </p>
+            </section>
+
+            <a href="wiki.html" class="back-to-home">← Voltar à Página Inicial</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 WikiModerna. Conhecimento livre para todos 📚</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligência Artificial - WikiModerna</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .breadcrumb {
+            background: #34495e;
+            padding: 1rem 2rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .article-meta {
+            background: #ecf0f1;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid #3498db;
+            margin: 2rem;
+            border-radius: 5px;
+        }
+
+        .meta-item {
+            display: inline-block;
+            margin-right: 2rem;
+            color: #555;
+        }
+
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #3498db10, #2980b910);
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .back-to-home {
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem 0;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+            
+            .article-meta {
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>WikiModerna</h1>
+            </div>
+        </header>
+
+        <div class="breadcrumb">
+            <a href="wiki.html">Início</a> &gt; <a href="#tecnologia">Tecnologia</a> &gt; Inteligência Artificial
+        </div>
+
+        <div class="article-header">
+            <h1 class="article-title">Inteligência Artificial</h1>
+            <p class="article-subtitle">O Futuro da Computação e Automação</p>
+        </div>
+
+        <div class="article-meta">
+            <span class="meta-item"><strong>Categoria:</strong> Tecnologia</span>
+            <span class="meta-item"><strong>Última atualização:</strong> 3 de julho de 2025</span>
+            <span class="meta-item"><strong>Tempo de leitura:</strong> 8 minutos</span>
+        </div>
+
+        <div class="content">
+            <div class="toc">
+                <h3>📋 Índice</h3>
+                <ul>
+                    <li><a href="#introducao">1. Introdução</a></li>
+                    <li><a href="#historia">2. História da IA</a></li>
+                    <li><a href="#tipos">3. Tipos de Inteligência Artificial</a></li>
+                    <li><a href="#aplicacoes">4. Aplicações Modernas</a></li>
+                    <li><a href="#machine-learning">5. Machine Learning</a></li>
+                    <li><a href="#futuro">6. O Futuro da IA</a></li>
+                    <li><a href="#desafios">7. Desafios e Considerações Éticas</a></li>
+                </ul>
+            </div>
+
+            <section id="introducao" class="section">
+                <h2>🤖 Introdução</h2>
+                <p>
+                    A <strong>Inteligência Artificial (IA)</strong> é uma área da ciência da computação que se dedica ao desenvolvimento de sistemas capazes de realizar tarefas que normalmente requerem inteligência humana. Essas tarefas incluem aprendizado, raciocínio, percepção, compreensão de linguagem natural e resolução de problemas.
+                </p>
+                <p>
+                    Desde o seu surgimento na década de 1950, a IA evoluiu dramaticamente, passando de conceitos teóricos para aplicações práticas que transformam nossa sociedade. Hoje, a IA está presente em praticamente todos os aspectos de nossas vidas, desde os algoritmos que determinam o que vemos nas redes sociais até os sistemas que diagnosticam doenças e dirigem carros autonomamente.
+                </p>
+                
+                <div class="image-placeholder">
+                    🧠 Imagem: Representação conceitual de uma rede neural artificial
+                </div>
+            </section>
+
+            <section id="historia" class="section">
+                <h2>📚 História da Inteligência Artificial</h2>
+                
+                <h3>Os Primórdios (1940-1950)</h3>
+                <p>
+                    A IA teve suas raízes nos trabalhos de matemáticos e cientistas como <strong>Alan Turing</strong>, que propôs o famoso "Teste de Turing" em 1950. Este teste sugere que uma máquina pode ser considerada inteligente se conseguir enganar um interrogador humano, fazendo-o acreditar que está conversando com outro humano.
+                </p>
+
+                <h3>O Nascimento Oficial (1956)</h3>
+                <p>
+                    O termo "Inteligência Artificial" foi cunhado em 1956 durante a Conferência de Dartmouth, organizada por John McCarthy, Marvin Minsky, Nathaniel Rochester e Claude Shannon. Este evento é considerado o marco oficial do nascimento da IA como disciplina acadêmica.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>💡 Curiosidade:</strong> O primeiro programa de IA foi o "Logic Theorist", desenvolvido por Allen Newell, Herbert Simon e Cliff Shaw em 1955, capaz de provar teoremas matemáticos.
+                </div>
+
+                <h3>Era Moderna (1980-presente)</h3>
+                <p>
+                    A era moderna da IA começou com o ressurgimento do interesse nas redes neurais e o desenvolvimento de algoritmos de machine learning mais sofisticados. O advento da internet e o aumento exponencial do poder computacional permitiram avanços sem precedentes.
+                </p>
+            </section>
+
+            <section id="tipos" class="section">
+                <h2>🔍 Tipos de Inteligência Artificial</h2>
+
+                <h3>IA Fraca (Narrow AI)</h3>
+                <p>
+                    A IA fraca, também conhecida como IA específica, é projetada para realizar tarefas específicas. Exemplos incluem sistemas de reconhecimento de voz, algoritmos de recomendação e programas de xadrez. Este é o tipo de IA mais comum atualmente.
+                </p>
+
+                <h3>IA Forte (General AI)</h3>
+                <p>
+                    A IA forte seria capaz de entender, aprender e aplicar conhecimento em uma ampla gama de tarefas, similar à inteligência humana. Este tipo de IA ainda não existe e permanece como objetivo de longo prazo da pesquisa.
+                </p>
+
+                <h3>Superinteligência</h3>
+                <p>
+                    A superinteligência refere-se a uma IA que superaria a inteligência humana em praticamente todos os domínios. Este conceito permanece no reino da especulação científica e filosofia.
+                </p>
+            </section>
+
+            <section id="aplicacoes" class="section">
+                <h2>🚀 Aplicações Modernas</h2>
+
+                <div class="image-placeholder">
+                    📱 Imagem: Assistentes virtuais em smartphones e dispositivos inteligentes
+                </div>
+
+                <h3>Assistentes Virtuais</h3>
+                <p>
+                    Sistemas como Siri, Alexa e Google Assistant utilizam processamento de linguagem natural e machine learning para entender e responder a comandos de voz, tornando a interação humano-computador mais natural e intuitiva.
+                </p>
+
+                <h3>Medicina e Diagnósticos</h3>
+                <p>
+                    A IA está revolucionando a medicina através de sistemas de diagnóstico por imagem que podem detectar cânceres, análise de dados genômicos para medicina personalizada, e desenvolvimento de novos medicamentos através de simulações computacionais.
+                </p>
+
+                <h3>Veículos Autônomos</h3>
+                <p>
+                    Carros autônomos utilizam uma combinação de sensores, câmeras, radar e algoritmos de IA para navegar com segurança pelas estradas, prometendo reduzir acidentes e transformar o transporte urbano.
+                </p>
+
+                <h3>Finanças e Segurança</h3>
+                <p>
+                    Sistemas de IA são utilizados para detectar fraudes, automatizar negociações financeiras, avaliar riscos de crédito e fornecer conselhos de investimento personalizados.
+                </p>
+            </section>
+
+            <section id="machine-learning" class="section">
+                <h2>🧮 Machine Learning e Deep Learning</h2>
+
+                <div class="highlight-box">
+                    <strong>🎯 Definição:</strong> Machine Learning é um subcampo da IA que permite aos computadores aprender e melhorar automaticamente através da experiência, sem serem explicitamente programados para cada tarefa.
+                </div>
+
+                <h3>Tipos de Machine Learning</h3>
+                <p>
+                    <strong>Aprendizado Supervisionado:</strong> O algoritmo aprende a partir de dados rotulados, como identificar se um email é spam ou não com base em exemplos previamente classificados.
+                </p>
+                <p>
+                    <strong>Aprendizado Não Supervisionado:</strong> O algoritmo encontra padrões em dados não rotulados, como agrupar clientes com comportamentos similares para segmentação de mercado.
+                </p>
+                <p>
+                    <strong>Aprendizado por Reforço:</strong> O algoritmo aprende através de tentativa e erro, recebendo recompensas ou penalidades por suas ações, como em jogos ou controle robótico.
+                </p>
+
+                <h3>Redes Neurais e Deep Learning</h3>
+                <p>
+                    As redes neurais artificiais são inspiradas no funcionamento do cérebro humano. O deep learning utiliza redes neurais com múltiplas camadas para processar dados complexos como imagens, voz e texto, possibilitando avanços em reconhecimento de padrões e processamento de linguagem natural.
+                </p>
+
+                <div class="image-placeholder">
+                    🔗 Imagem: Estrutura de uma rede neural profunda com múltiplas camadas
+                </div>
+            </section>
+
+            <section id="futuro" class="section">
+                <h2>🔮 O Futuro da Inteligência Artificial</h2>
+
+                <h3>Tendências Emergentes</h3>
+                <p>
+                    O futuro da IA promete desenvolvimentos revolucionários em várias áreas. Esperamos ver avanços significativos em IA explicável, onde os sistemas serão capazes de justificar suas decisões de forma compreensível para humanos.
+                </p>
+                <p>
+                    A integração entre IA e computação quântica pode acelerar exponencialmente o processamento de algoritmos complexos, abrindo novas possibilidades para simulações científicas e otimização de sistemas.
+                </p>
+
+                <h3>IA e Sustentabilidade</h3>
+                <p>
+                    A IA está sendo cada vez mais aplicada para enfrentar desafios ambientais, desde otimização do consumo de energia em smart cities até previsão e mitigação de mudanças climáticas através de modelos preditivos sofisticados.
+                </p>
+            </section>
+
+            <section id="desafios" class="section">
+                <h2>⚠️ Desafios e Considerações Éticas</h2>
+
+                <h3>Viés Algorítmico</h3>
+                <p>
+                    Um dos principais desafios da IA é o viés presente nos dados de treinamento, que pode resultar em discriminação injusta em áreas como contratação, crédito financeiro e sistema judicial. É crucial desenvolver métodos para identificar e mitigar esses vieses.
+                </p>
+
+                <h3>Privacidade e Segurança</h3>
+                <p>
+                    O uso extensivo de dados pessoais em sistemas de IA levanta questões importantes sobre privacidade. É necessário encontrar um equilíbrio entre os benefícios da IA e a proteção dos direitos individuais.
+                </p>
+
+                <h3>Impacto no Emprego</h3>
+                <p>
+                    A automação impulsionada pela IA pode transformar significativamente o mercado de trabalho. Embora possa eliminar alguns empregos, também cria oportunidades em novas áreas, exigindo programas de requalificação profissional.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>🤝 Responsabilidade Compartilhada:</strong> O desenvolvimento ético da IA requer colaboração entre desenvolvedores, governos, empresas e sociedade civil para garantir que os benefícios sejam compartilhados de forma justa.
+                </div>
+            </section>
+
+            <a href="wiki.html" class="back-to-home">← Voltar à Página Inicial</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 WikiModerna. Conhecimento livre para todos 📚</p>
+        </footer>
+    </div>
+</body>
+</html>
