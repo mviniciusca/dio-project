@@ -28,6 +28,19 @@ Repositório dedicado à minha jornada de aprendizado na [DIO.me](https://dio.me
 - **Tecnologias**: HTML5
 - **Link**: [Ver projeto](https://github.com/mviniciusca/dio-project/tree/main/html)
 
+### 📚 WikiModerna
+- **Descrição**: Wikipedia reimaginada com design moderno e layout aprimorado
+- **Características**:
+  - Design responsivo e moderno com gradientes
+  - 3 artigos completos (IA, Revolução Francesa, Mudanças Climáticas)
+  - Navegação funcional entre páginas
+  - Sistema de breadcrumbs e índices
+  - Cards interativos com hover effects
+  - Cores temáticas por categoria
+  - Conteúdo educativo extenso e bem estruturado
+- **Tecnologias**: HTML5, CSS3 (sem JavaScript)
+- **Link**: [Ver projeto](https://github.com/mviniciusca/dio-project/tree/main/wikipedia)
+
 ## 👨‍💻 Sobre
 
 Desenvolvedor em constante aprendizado, explorando tecnologias e aprimorando habilidades através da prática e projetos reais.
