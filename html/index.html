@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página HTML Simples</title>
+</head>
+<body>
+    <h1>Minha Página HTML Simples</h1>
+    
+    <h2>Sobre mim</h2>
+    <p>Esta é uma página HTML básica que demonstra o uso de diferentes tags.</p>
+    
+    <h2>Imagem</h2>
+    <img src="https://via.placeholder.com/300x200/0066cc/ffffff?text=Imagem+de+Exemplo" 
+         alt="Imagem de exemplo" 
+         width="300" 
+         height="200">
+    
+    <h2 id="tabela">Tabela de Dados</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Cidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>João</td>
+                <td>25</td>
+                <td>São Paulo</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>30</td>
+                <td>Rio de Janeiro</td>
+            </tr>
+            <tr>
+                <td>Pedro</td>
+                <td>28</td>
+                <td>Belo Horizonte</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2 id="video">Vídeo</h2>
+    <video width="400" height="300" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+    
+    <h2 id="audio">Áudio</h2>
+    <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    
+    <h2>Guia de Elementos HTML Básicos</h2>
+    
+    <h3>O que é um Parágrafo (&lt;p&gt;)?</h3>
+    <p>O elemento <strong>&lt;p&gt;</strong> define um parágrafo. É um dos elementos mais básicos do HTML e é usado para agrupar texto relacionado. Cada parágrafo cria automaticamente uma quebra de linha antes e depois dele.</p>
+    <p>Este é outro parágrafo que demonstra como múltiplos parágrafos ficam separados visualmente.</p>
+    
+    <h3>Lista Não Ordenada (&lt;ul&gt;)</h3>
+    <p>Uma lista não ordenada cria uma lista com marcadores (bullets):</p>
+    <ul>
+        <li>Primeiro item da lista não ordenada</li>
+        <li>Segundo item - os marcadores são iguais</li>
+        <li>Terceiro item</li>
+        <li>Quarto item com <em>texto em itálico</em></li>
+    </ul>
+    
+    <h3>Lista Ordenada (&lt;ol&gt;)</h3>
+    <p>Uma lista ordenada cria uma lista numerada automaticamente:</p>
+    <ol>
+        <li>Primeiro item da lista ordenada</li>
+        <li>Segundo item - numerado automaticamente</li>
+        <li>Terceiro item</li>
+        <li>Quarto item com <strong>texto em negrito</strong></li>
+    </ol>
+    
+    <h3>Blockquote (&lt;blockquote&gt;)</h3>
+    <p>O elemento blockquote é usado para citações longas ou trechos destacados:</p>
+    <blockquote>
+        "A educação é a arma mais poderosa que você pode usar para mudar o mundo. O conhecimento em HTML é o primeiro passo para criar páginas web incríveis e acessíveis para todos."
+        <br><br>
+        <cite>- Exemplo de citação em blockquote</cite>
+    </blockquote>
+    
+    <h3>Outros Elementos de Texto</h3>
+    <p>Aqui estão alguns elementos importantes para formatação de texto:</p>
+    <ul>
+        <li><strong>&lt;strong&gt;</strong> - para <strong>texto importante/negrito</strong></li>
+        <li><em>&lt;em&gt;</em> - para <em>texto enfatizado/itálico</em></li>
+        <li><u>&lt;u&gt;</u> - para <u>texto sublinhado</u></li>
+        <li><mark>&lt;mark&gt;</mark> - para <mark>texto destacado/marcado</mark></li>
+        <li><small>&lt;small&gt;</small> - para <small>texto menor</small></li>
+        <li><del>&lt;del&gt;</del> - para <del>texto riscado/deletado</del></li>
+        <li><ins>&lt;ins&gt;</ins> - para <ins>texto inserido/sublinhado</ins></li>
+    </ul>
+    
+    <h3>Divisões e Seções</h3>
+    <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+        <p><strong>&lt;div&gt;</strong> - Este texto está dentro de uma div (divisão). É um contêiner genérico usado para agrupar elementos.</p>
+    </div>
+    
+    <h3>Elemento de Código</h3>
+    <p>Para mostrar código, use a tag <code>&lt;code&gt;</code>:</p>
+    <code>console.log("Hello, World!");</code>
+    
+    <h3>Elemento Pré-formatado</h3>
+    <p>O elemento <strong>&lt;pre&gt;</strong> preserva espaços e quebras de linha:</p>
+    <pre>
+    function exemploHTML() {
+        console.log("Texto pré-formatado");
+        console.log("Mantém    espaços    e");
+        console.log("quebras de linha");
+    }
+    </pre>
+    
+    <h2>Links Úteis</h2>
+    <p>Aqui estão alguns links importantes para aprender HTML:</p>
+    <ul>
+        <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+        <li><a href="https://html.spec.whatwg.org/" target="_blank">HTML Living Standard (Especificação Oficial)</a></li>
+        <li><a href="https://validator.w3.org/" target="_blank">Validador HTML do W3C</a></li>
+        <li><a href="https://caniuse.com/" target="_blank">Can I Use - Compatibilidade de Elementos HTML</a></li>
+    </ul>
+    
+    <h3>Links Internos (Navegação na Página)</h3>
+    <p>Você também pode criar links para seções da própria página:</p>
+    <ul>
+        <li><a href="#tabela">Ir para a Tabela de Dados</a></li>
+        <li><a href="#video">Ir para a seção de Vídeo</a></li>
+        <li><a href="#audio">Ir para a seção de Áudio</a></li>
+    </ul>
+    
+    <hr>
+    
+    <footer>
+        <p><strong>Rodapé da página</strong> - Criado por <a href="https://github.com/mviniciusca" target="_blank">Marcos Coelho</a></p>
+    </footer>
+</body>
+</html>
