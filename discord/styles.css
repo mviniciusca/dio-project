@@ -1,0 +1,160 @@
+/* (mantém as regras existentes) */
+
+/* === Imagens adicionadas === */
+.hero-art{position:relative;min-height:240px}
+.hero-img{
+  width:100%;
+  height:auto;
+  border-radius:22px;
+  box-shadow:0 18px 40px rgba(2,6,23,.35), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.art-img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:var(--radius);
+  box-shadow:0 18px 40px rgba(2,6,23,.25), inset 0 1px 0 rgba(255,255,255,.04);
+}
+.tech-img{
+  width:100%;
+  height:auto;
+  border-radius:20px;
+  box-shadow:0 22px 60px rgba(2,6,23,.35);
+}
+
+/* Remoção visual dos painéis antigos (se ainda tiverem classes no CSS) */
+.panel,.card-tall,.card-wide,.card-stack{display:none}
+
+/* Resto do CSS anterior segue igual... */
+
+/* Variáveis e base */
+:root{
+  --blurple:#5865F2;
+  --blurple-600:#4752C4;
+  --dark:#23272A;
+  --notblack:#0B0E13;
+  --text:#2E3338;
+  --muted:#6B7280;
+  --bg:#ffffff;
+  --panel:#1f2430;
+  --panel-2:#151924;
+  --card:#2b3142;
+  --ring:rgba(88,101,242,.25);
+  --radius:18px;
+  --container:1120px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0 0 .5rem;line-height:1.15;color:#0f172a}
+p{margin:0 0 1rem;color:var(--muted)}
+.container{width:min(100%, var(--container)); margin-inline:auto; padding:0 1rem}
+
+/* Acessibilidade */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;z-index:1000;background:#fff;padding:.5rem .75rem;border-radius:.5rem;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.8);
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.brand{display:flex;gap:.5rem;align-items:center;color:#0f172a;text-decoration:none;font-weight:700}
+.brand-logo{font-size:1.25rem}
+.brand-text{letter-spacing:.3px}
+.nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.nav a{color:#111827;text-decoration:none;font-weight:600}
+.nav a:hover{color:var(--blurple)}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.9rem 1.25rem;border-radius:999px;text-decoration:none;font-weight:800;
+  transition:.2s ease; border:1px solid transparent;
+}
+.btn.small{padding:.5rem .9rem;font-weight:700}
+.btn-light{
+  background:#fff;border-color:#e5e7eb;color:#111827;box-shadow:0 8px 16px rgba(0,0,0,.06);
+}
+.btn-light:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(0,0,0,.08)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{filter:brightness(1.1)}
+.btn-blurple{background:var(--blurple);color:#fff;box-shadow:0 8px 18px var(--ring)}
+.btn-blurple:hover{background:var(--blurple-600)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(1200px 400px at 50% -20%, #8da1ff 0%, rgba(141,161,255,0) 70%),
+    radial-gradient(900px 350px at 10% 100%, #b9c1ff 0%, rgba(185,193,255,0) 60%),
+    radial-gradient(900px 350px at 90% 100%, #b9c1ff 0%, rgba(185,193,255,0) 60%),
+    linear-gradient(180deg, #7a86ff 0%, #6a76ff 20%, #5865F2 60%, #4b57e6 100%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1fr;gap:2rem;
+  padding:3.5rem 1rem 4rem;
+}
+.hero-title{
+  font-size:clamp(2rem, 6vw, 3.5rem);
+  font-weight:900; letter-spacing:.6px; color:#fff; text-shadow:0 4px 30px rgba(0,0,0,.25);
+}
+.hero-subtitle{color:#eef2ff;max-width:60ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.25rem}
+.hero-copy{max-width:720px}
+
+/* FEATURES */
+.feature{padding:3.5rem 0;background:#fff}
+.feature.alt{background:#f8fafc}
+.feature-grid{
+  display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;
+}
+.art{position:relative}
+
+/* TECH */
+.tech{padding:4rem 0;background:#f1f5f9}
+.tech-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
+.tech-title{font-size:clamp(1.5rem, 3.8vw, 2rem);font-weight:900;letter-spacing:.4px}
+.tech-subtitle{max-width:70ch}
+.tech-stage{margin-top:2rem;width:min(100%,980px)}
+.cta-center{margin-top:2rem}
+
+/* Footer */
+.site-footer{background:var(--notblack);color:#cbd5e1}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1rem}
+
+/* Responsivo */
+@media (min-width: 800px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;padding:4.5rem 1rem 5.5rem}
+  .feature-grid{grid-template-columns:1.1fr .9fr}
+  .feature.alt .feature-grid{grid-template-columns:.9fr 1.1fr}
+  .art-left{order:1}
+  .feature .copy{order:2}
+  .feature.alt .copy{order:1}
+  .art-right{order:2}
+}
+@media (min-width: 1040px){
+  .hero-title{font-size:3.75rem}
+  .hero-subtitle{font-size:1.1rem}
+}
+
+/* Redução de movimento */
+@media (prefers-reduced-motion: reduce){
+  .btn:hover{transform:none}
+}
